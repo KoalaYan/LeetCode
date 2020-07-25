@@ -14,8 +14,9 @@ public:
             for(int i = 1;i < N;i++){
                 if(N%i==0){
                     flag = win(N-i);
-                    if(flag){
+                    if(!flag){
                         p[N] = 1;
+                        break;
                     }
                 }
             }
@@ -24,7 +25,9 @@ public:
     }
 
     bool divisorGame(int N){
-        p = new int[N+1];
+        int num = (N+1>4?N+1:4);
+        p = new int[num];
+        p[1] = 0;
         p[2] = 1;
         p[3] = 0;
         for(int i = 4;i <= N;i++){
