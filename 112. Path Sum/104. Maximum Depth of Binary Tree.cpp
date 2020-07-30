@@ -11,7 +11,6 @@ struct TreeNode {
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-    TreeNode(int x, TreeNode*l, TreeNode*r) : val(x), left(l), right(r) {}
 };
 
 class Solution {
@@ -45,14 +44,9 @@ public:
 
 
 int main(){
-    TreeNode*l = new TreeNode(15);
-    TreeNode*r = new TreeNode(7);
-    r = new TreeNode(20,l,r);
-    l = new TreeNode(9);
 
-    TreeNode*root = new TreeNode(3, l, r);
 
     Solution sol;
-    cout<<sol.maxDepth(root);
+    cout<<sol.isInterleave(s1, s2, s3);
     return 0;
 }
