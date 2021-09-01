@@ -9,14 +9,12 @@ using namespace std;
 class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
-
+        vector<int> res = nums;
+        int n = nums.size();
+        for(int i = 1;i<n;i++){
+            res[i] += res[i-1];
+        }
+        return res;
     }
 };
 
-int main(){
-    string s = "cba";
-    vector<vector<int>> pairs = {{0,1},{1,2}};
-    Solution sol;
-    cout<<sol.smallestStringWithSwaps(s, pairs);
-    return 0;
-}
